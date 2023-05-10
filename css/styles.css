@@ -1,0 +1,216 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Dosis', sans-serif;
+  font-size: 16px;
+}
+
+main {
+  background: #000;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lineBorder{
+  width: 91vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  padding: 2px;
+  background-image: radial-gradient(
+  circle, 
+  rgba(63,94,251,1) 0%, 
+  rgba(252,70,107,1) 100%
+  );
+}
+
+form {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.mainCard {
+  width: 98%;
+  border-radius: 25px;
+  background-color: #000;
+  padding: 25px;
+}
+
+.title {
+  font-family: 'Dosis', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 15px;
+  gap: 2rem;
+}
+
+.textTitle{
+  color: #ff0099;
+  font-size: 2.9rem;
+}
+
+.container__form{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.inputForm {
+  border: none;
+  padding: 10px;
+  border: 1px solid #0089ff;
+  background: #000;
+  border-radius: 8px;
+  outline: none;
+  width: 80%;
+  color: #ff8d00;
+}
+
+.inputForm--invalid {
+  border: 1px solid #ff9000;
+  box-shadow: 0px 0px 10px 2px #ff9000;
+  color: #ff0000;
+}
+
+.inputForm::placeholder {
+  padding: 0px;
+}
+
+.btnCreate {
+  padding: 10px 15px;
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(62, 161, 219, 1) 11.2%,
+    rgba(93, 52, 236, 1) 100.2%
+  );
+  border: none;
+  color: #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.mensajeError{
+display: none;
+}
+
+.mensajeError--validity{
+  display: block;
+  color: #000;
+  font-size: 0.9rem;
+  background: #ff9000;
+  border-radius: 4px;
+  width: 50%;
+  padding: 0 0.5rem 0.2rem 0.5rem;
+  margin-bottom: 4px;
+}
+
+.cardsList {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-content: flex-start;
+  overflow-y: scroll;                   /* Se crea un SCROLLBAR solo en eje Y, es decir, vertical*/
+  max-height: 60vh;
+  height: 60vh;
+  gap: 1rem;
+}
+
+.cardsList::-webkit-scrollbar{          /*Permite personailizar el scrollbar*/
+  width: 9px;
+  height: 8px;
+  background-color: #00b8ff;
+  border-radius: 10px;
+}
+
+.cardsList::-webkit-scrollbar-thumb{
+  background: #0087bd;
+    border-radius: 10px;
+}
+
+.card {
+  width: 150px;
+  height: 130px;
+  padding: 15px;
+  box-shadow: 2px 4px 4px 4px rgba(71, 71, 71, 0.16);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  margin: 5px 0px;
+  position: relative;
+  background: #ff00bc;
+}
+
+.task {
+  padding: 10px;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.icon:hover {
+  color: #a40078;
+}
+
+.completeIcon {
+  color: rgba(0, 0, 0);
+}
+
+.trashIcon:hover {
+  color: rgb(255, 255, 255);
+}
+
+.deleteConfirmationPop {
+  position: relative;
+  background-color: rgba(255, 255, 255);
+  z-index: 99;
+  width: 100%;
+  top: -100px;
+  left: 0;
+}
+.deleteSpace {
+  position: relative;
+  width: 30%;
+}
+
+.noTasks {
+  font-size: 48px;
+}
+
+@media screen and (max-width: 768px){
+  .container__form{
+    align-items: center;
+  }
+  form {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .btnCreate{
+    width: 80%;
+    padding: 1.5px 0;
+  }
+  .mensajeError--validity{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .logo__imagen{
+    display: none; 
+  }
+  .cardsList {
+    justify-content: center;
+  }
+}
